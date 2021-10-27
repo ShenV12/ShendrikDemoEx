@@ -1,0 +1,65 @@
+﻿<Page x:Class="WpfApp4.Pages.PageAgents"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp4.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAgents">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="321*"/>
+            <RowDefinition Height="62*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox Name="tbFind" TextChanged="tbFind_TextChanged" Margin="10,10,10,10.2" Width="276"/>
+            <ComboBox Name="cbsort" SelectionChanged="cbsort_SelectionChanged" Margin="10,10,10,10.2" Width="188"/>
+            <ComboBox Name="cbFilter" SelectionChanged="cbFilter_SelectionChanged" Margin="10,10,10,10.2" Width="188"/>
+        </StackPanel>
+
+        <ListBox x:Name="lbAgents" Grid.Row="1">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding Logo}" Grid.RowSpan="3" Margin="5" Width="75" Height="75"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1">
+                            <Run Text="{Binding AgentType.Title}"/>
+                            <Run Text=" | "/>
+                            <Run Text="{Binding Title}"/>
+                        </TextBlock>
+                        <TextBlock Text="10 продаж за год" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="{Binding DirectorName}" Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Phone}" Grid.Row="3" Grid.Column="1"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="btnAddAgent" Content="Добавить" Margin="10,10,10,9.6" Click="btnAddAgent_Click" Width="151"/>
+            <Button Name="btnEditAgent" Content="Изменить" Margin="10,10,10,9.6" Click="btnEditAgent_Click" Width="152"/>
+            <Button Name="btnDelAgent" Content="Удалить" Margin="10,10,10,9.6" Click="btnDelAgent_Click" Width="127" />
+        </StackPanel>
+    </Grid>
+</Page>

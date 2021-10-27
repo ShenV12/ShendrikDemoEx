@@ -1,0 +1,92 @@
+﻿<Page x:Class="WpfApp4.Pages.PageAddAgent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp4.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAddAgent">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="182*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Margin="334,10,334,9.6" Width="132">
+            <Button Name="btnSave" Content="Сохранить" Margin="10" Click="btnSave_Click" Height="46" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112"/>
+
+        </StackPanel>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="201*"/>
+                <ColumnDefinition Width="599*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical">
+                <Button Name="btnImageLoad" Content="Загрузить логотип" Margin="10" Click="btnImageLoad_Click"/>
+                <TextBlock Name="tbLogo" Margin="5"/>
+            </StackPanel>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Название Компании" Margin="3"/>
+                    <TextBox Name="tbTitle" Margin="3"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Тип Компании" Margin="3"/>
+                    <ComboBox Name="cbType" Margin="3"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Адрес" Margin="3"/>
+                    <TextBox Name="tbAddress" Margin="3"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="ИНН" Margin="3"/>
+                    <TextBox Name="tbINN" Margin="3"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="КПП" Margin="3"/>
+                    <TextBox Name="tbKPP" Margin="3"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Имя Директора" Margin="3"/>
+                    <TextBox Name="tbDirector" Margin="3"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Телефон" Margin="3"/>
+                    <TextBox Name="tbPhone" Margin="3"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Email" Margin="3"/>
+                    <TextBox Name="tbEmail" Margin="3"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" Margin="3" >
+                    <TextBlock Text="Приоритетность" Margin="3"/>
+                    <TextBox Name="tbPriority" Margin="3"/>
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
